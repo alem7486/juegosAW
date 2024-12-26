@@ -7,5 +7,9 @@ td {
     height: 30px;
     text-align: center;
     font-size: 20px;
+    cursor: pointer;
+}
+td.selected {
+    background-color: green;
 }
 
