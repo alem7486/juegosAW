@@ -1,4 +1,4 @@
-onst palabras = ['SILENTIUM', 'CONECTANDO', 'WAVINAS', 'FUSION'];
+const palabras = ['SILENTIUM', 'CONECTANDO', 'WAVINAS', 'FUSION'];
 const tamaño = 20; // Tamaño de la sopa
 const sopa = Array.from(Array(tamaño), () => Array(tamaño).fill(''));
 
