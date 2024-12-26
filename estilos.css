@@ -11,6 +11,6 @@ td {
     cursor: pointer;
 }
 td.selected {
-    background-color: green;
+    background-color: yellow;
 }
 
