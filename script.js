@@ -1,6 +1,7 @@
 const palabras = ['SILENTIUM', 'CONECTANDO', 'WAVINAS', 'FUSION'];
 const tamaño = 20; // Tamaño de la sopa
 const sopa = Array.from(Array(tamaño), () => Array(tamaño).fill(''));
+const palabrasEncontradas = [];
 
 // Función para colocar las palabras
 function colocarPalabra(palabra) {
@@ -34,6 +35,25 @@ for (let i = 0; i < tamaño; i++) {
     }
 }
 
+// Función para verificar si una palabra está seleccionada
+function verificarPalabra() {
+    let seleccionada = '';
+    document.querySelectorAll('td.selected').forEach(celda => {
+        seleccionada += celda.textContent;
+    });
+
+    if (palabras.includes(seleccionada)) {
+        document.querySelectorAll('td.selected').forEach(celda => {
+            celda.classList.remove('selected');
+            celda.classList.add('correct');
+        });
+        if (!palabrasEncontradas.includes(seleccionada)) {
+            palabrasEncontradas.push(seleccionada);
+            document.getElementById('encontradas').textContent = palabrasEncontradas.join(', ');
+        }
+    }
+}
+
 // Mostrar la sopa de letras en la tabla y permitir selección
 const tabla = document.getElementById('sopa');
 sopa.forEach((fila, filaIndex) => {
@@ -43,9 +63,15 @@ sopa.forEach((fila, filaIndex) => {
         celda.textContent = letra;
         celda.addEventListener('click', () => {
             celda.classList.toggle('selected');
-            // Aquí podrías agregar lógica adicional para verificar si se seleccionó una palabra completa.
+            verificarPalabra();
         });
         filaElemento.appendChild(celda);
     });
     tabla.appendChild(filaElemento);
 });
+
+// Crear un div para mostrar las palabras encontradas
+const encontradasDiv = document.createElement('div');
+encontradasDiv.id = 'encontradas';
+encontradasDiv.style.marginTop = '20px';
+document.body.appendChild(encontradasDiv);
