@@ -2,6 +2,7 @@ const palabras = ['SILENTIUM', 'CONECTANDO', 'WAVINAS', 'FUSION'];
 const tamaño = 20; // Tamaño de la sopa
 const sopa = Array.from(Array(tamaño), () => Array(tamaño).fill(''));
 const palabrasEncontradas = [];
+let seleccionActual = [];
 
 // Función para colocar las palabras
 function colocarPalabra(palabra) {
@@ -37,13 +38,10 @@ for (let i = 0; i < tamaño; i++) {
 
 // Función para verificar si una palabra está seleccionada
 function verificarPalabra() {
-    let seleccionada = '';
-    document.querySelectorAll('td.selected').forEach(celda => {
-        seleccionada += celda.textContent;
-    });
-
+    let seleccionada = seleccionActual.map(celda => celda.textContent).join('');
+    
     if (palabras.includes(seleccionada)) {
-        document.querySelectorAll('td.selected').forEach(celda => {
+        seleccionActual.forEach(celda => {
             celda.classList.remove('selected');
             celda.classList.add('correct');
         });
@@ -51,7 +49,12 @@ function verificarPalabra() {
             palabrasEncontradas.push(seleccionada);
             document.getElementById('encontradas').textContent = palabrasEncontradas.join(', ');
         }
+    } else {
+        seleccionActual.forEach(celda => {
+            celda.classList.remove('selected');
+        });
     }
+    seleccionActual = [];
 }
 
 // Mostrar la sopa de letras en la tabla y permitir selección
@@ -63,7 +66,10 @@ sopa.forEach((fila, filaIndex) => {
         celda.textContent = letra;
         celda.addEventListener('click', () => {
             celda.classList.toggle('selected');
-            verificarPalabra();
+            seleccionActual.push(celda);
+            if (seleccionActual.length === Math.max(...palabras.map(palabra => palabra.length))) {
+                verificarPalabra();
+            }
         });
         filaElemento.appendChild(celda);
     });

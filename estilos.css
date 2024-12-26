@@ -19,6 +19,10 @@ td {
     font-family: "Nunito", sans-serif;
 }
 
+td.selected {
+    background-color: yellow;
+}
+
 td.correct {
     background-color: yellow;
 }
