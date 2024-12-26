@@ -1,5 +1,3 @@
-/ Palabras a incluir en la sopa
-
 const palabras = ["JAVASCRIPT", "CODIGO", "FUNCION", "VARIABLE", "BUCLE"];
  
 // Dimensiones de la sopa de letras
