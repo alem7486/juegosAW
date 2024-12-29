@@ -1,4 +1,4 @@
-const words = ["FUSION", "SILENTIUM", "HEP2O", "WAVINAS"]; 
+const words = ["CASA", "PERRO", "SOL", "MAR"]; 
 const gridSize = 10; 
 let wordGrid;
 let currentSelection = []; 
