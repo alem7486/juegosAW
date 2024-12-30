@@ -28,7 +28,6 @@ h1 {
     width: 20px; /* Ajusta según el tamaño deseado */
     height: 20px; /* Ajusta según el tamaño deseado */
     display: flex;
-    justify-content: center;
     align-items: center;
     background-color: white;
     cursor: pointer;
@@ -64,7 +63,6 @@ h1 {
     background-color: #e0e0e0;
     border-radius: 4px;
     font-size: 16px;
-    text-align: center;
 }
 
 .wordsList div.found::after {
