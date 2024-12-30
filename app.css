@@ -1,6 +1,23 @@
+*{
+    padding: 10px;
+    margin:10px;
+    font-family: "Nunito";
+}
+
 body{
-    background-color: gray;
-  }
+    background-color:white;
+    font-family: "Nunito";
+}
+
+h1{
+
+}
+.nunito-uniquifier {
+    font-family: "Nunito", serif;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
+    }
   
   #wordSearchContainer {
       display: grid;
@@ -21,7 +38,7 @@ body{
   }
   
   #wordSearchContainer div.selected {
-      background-color: #add8e6;
+      background-color: #00ABE8;
   }
   .selected {
       background-color: #90ee90; /* Un verde claro para las letras seleccionadas */
@@ -62,10 +79,3 @@ body{
       text-decoration: none; /* Remueve el line-through si prefieres no tachar la palabra */
   }
 
-
-.nunito-uniquifier {
-  font-family: "Nunito", serif;
-  font-optical-sizing: auto;
-  font-weight: weight;
-  font-style: normal;
-}
