@@ -36,6 +36,8 @@ h1 {
 
 #wordSearchContainer div.selected {
     background-color: #00ABE8;
+    align-items: center;
+    justify-content: center;
 }
 
 .selected {
