@@ -9,9 +9,9 @@ body{
     font-family: "Nunito";
 }
 
-h1{
-
+h1{font-family: "Nunito";
 }
+
 .nunito-uniquifier {
     font-family: "Nunito", serif;
     font-optical-sizing: auto;
@@ -46,6 +46,7 @@ h1{
   
   .found {
       background-color: white; /* Un rojo claro para las palabras encontradas */
+      
   }
   .wordsList {
       margin: 20px auto;

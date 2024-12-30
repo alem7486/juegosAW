@@ -23,14 +23,22 @@ function generateEmptyGrid(size) {
 }
 
 function placeWordsInGrid(words, grid) {
+    const directions = [
+        { row: 0, col: 1 },  // Horizontal
+        { row: 1, col: 0 },  // Vertical
+        { row: 1, col: 1 },  // Diagonal \
+        { row: 1, col: -1 }  // Diagonal /
+    ];
+
     words.forEach(word => {
         let placed = false;
         while (!placed) {
+            const direction = directions[Math.floor(Math.random() * directions.length)];
             const row = Math.floor(Math.random() * gridSize);
-            const col = Math.floor(Math.random() * (gridSize - word.length));
-            if (canPlaceWordAt(word, grid, row, col)) {
+            const col = Math.floor(Math.random() * gridSize);
+            if (canPlaceWordAt(word, grid, row, col, direction)) {
                 for (let i = 0; i < word.length; i++) {
-                    grid[row][col + i] = word[i];
+                    grid[row + i * direction.row][col + i * direction.col] = word[i];
                 }
                 placed = true;
             }
@@ -38,9 +46,13 @@ function placeWordsInGrid(words, grid) {
     });
 }
 
-function canPlaceWordAt(word, grid, row, col) {
+function canPlaceWordAt(word, grid, row, col, direction) {
     for (let i = 0; i < word.length; i++) {
-        if (grid[row][col + i] !== '_') return false;
+        const newRow = row + i * direction.row;
+        const newCol = col + i * direction.col;
+        if (newRow < 0 || newRow >= gridSize || newCol < 0 || newCol >= gridSize || grid[newRow][newCol] !== '_') {
+            return false;
+        }
     }
     return true;
 }
@@ -51,8 +63,8 @@ function renderGrid(grid) {
     grid.forEach((row, rowIndex) => {
         row.forEach((cell, colIndex) => {
             const cellElement = document.createElement('div');
-cellElement.textContent = cell === '_' ? String.fromCharCode(65 + Math.floor(Math.random() * 26)) : cell;
-    cellElement.dataset.index = rowIndex * gridSize + colIndex;
+            cellElement.textContent = cell === '_' ? String.fromCharCode(65 + Math.floor(Math.random() * 26)) : cell;
+            cellElement.dataset.index = rowIndex * gridSize + colIndex;
             cellElement.addEventListener('click', () => selectCell(rowIndex, colIndex, cellElement));
             container.appendChild(cellElement);
         });
@@ -88,7 +100,7 @@ function selectCell(rowIndex, colIndex, cellElement) {
         currentSelection.forEach(idx => {
             document.querySelector(`[data-index="${idx}"]`).classList.add('found');
         });
-       
+
         document.querySelector(`[data-word="${selectedWord}"]`).classList.add('found');
         currentSelection = [];
 
