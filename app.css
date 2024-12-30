@@ -28,10 +28,9 @@ h1 {
 #wordSearchContainer div {
     width: 50px; /* Ajusta según el tamaño deseado */
     height: 50px; /* Ajusta según el tamaño deseado */
-    display: flex;
-    align-items: center;
-    background-color: white;
-    cursor: pointer;
+    display: flex; justify-content: center; /* Centra el contenido horizontalmente */ 
+    align-items: center; /* Centra el contenido verticalmente */ 
+    background-color: white; cursor: pointer;
 }
 
 #wordSearchContainer div.selected {
