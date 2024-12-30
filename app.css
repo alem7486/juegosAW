@@ -76,3 +76,7 @@ h1 {
     background-color: #90ee90; /* Verde claro para indicar que la palabra ha sido encontrada */
     text-decoration: none; /* Remueve el line-through si prefieres no tachar la palabra */
 }
+
+/* Consultas de medios para diferentes tamaños de pantalla */ 
+@media (min-width: 600px) { .wordsList div { font-size: 2vw; } } @media (min-width: 768px) { #wordSearchContainer { max-width: 80vw; } .wordsList div { font-size: 1.5vw; } } @media (min-width: 1024px) { #wordSearchContainer { max-width: 70vw; } .wordsList div {
+    font-size: 1vw; } }
