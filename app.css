@@ -26,8 +26,8 @@ h1 {
 }
 
 #wordSearchContainer div {
-    width: 20px; /* Ajusta según el tamaño deseado */
-    height: 20px; /* Ajusta según el tamaño deseado */
+    width: 50px; /* Ajusta según el tamaño deseado */
+    height: 50px; /* Ajusta según el tamaño deseado */
     display: flex;
     align-items: center;
     background-color: white;
