@@ -1,5 +1,5 @@
 * {
-    padding: 0;
+    padding: 10px;
     margin: 0;
     font-family: "Nunito", sans-serif;
     box-sizing: border-box;
@@ -32,7 +32,6 @@ h1 {
     align-items: center;
     background-color: white;
     cursor: pointer;
-    border: 1px solid black; /* Opcional: un borde para cada celda */
 }
 
 #wordSearchContainer div.selected {
