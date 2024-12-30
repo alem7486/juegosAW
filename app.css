@@ -1,82 +1,82 @@
-*{
+* {
+    padding: 0;
+    margin: 0;
+    font-family: "Nunito", sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: white;
+    font-family: "Nunito", sans-serif;
+    margin: 20px;
+    padding: 20px;
+}
+
+h1 {
+    font-family: "Nunito", sans-serif;
+    margin-bottom: 20px;
+}
+
+#wordSearchContainer {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr); /* Ajusta según el tamaño deseado */
+    gap: 5px;
+    max-width: 500px; /* Ajusta según el tamaño deseado */
+    margin: 20px auto; /* Centrado en la página */
     padding: 10px;
-    margin:10px;
-    font-family: "Nunito";
 }
 
-body{
-    background-color:white;
-    font-family: "Nunito";
+#wordSearchContainer div {
+    width: 50px; /* Ajusta según el tamaño deseado */
+    height: 50px; /* Ajusta según el tamaño deseado */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    cursor: pointer;
+    border: 1px solid #ccc; /* Opcional: un borde para cada celda */
 }
 
-h1{font-family: "Nunito";
+#wordSearchContainer div.selected {
+    background-color: #00ABE8;
 }
 
-.nunito-uniquifier {
-    font-family: "Nunito", serif;
-    font-optical-sizing: auto;
-    font-weight: weight;
-    font-style: normal;
-    }
-  
-  #wordSearchContainer {
-      display: grid;
-      grid-template-columns: repeat(10, 1fr); /* Ajusta según el tamaño deseado */
-      gap: 5px;
-      max-width: 500px; /* Ajusta según el tamaño deseado */
-      margin: 0 auto;
-  }
-  
-  #wordSearchContainer div {
-      width: 50px; /* Ajusta según el tamaño deseado */
-      height: 50px; /* Ajusta según el tamaño deseado */
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background-color: white;
-      cursor: pointer;
-  }
-  
-  #wordSearchContainer div.selected {
-      background-color: #00ABE8;
-  }
-  .selected {
-      background-color: #90ee90; /* Un verde claro para las letras seleccionadas */
-  }
-  
-  .found {
-      background-color: white; /* Un rojo claro para las palabras encontradas */
-      
-  }
-  .wordsList {
-      margin: 20px auto;
-      max-width: 90vw;
-      padding: 10px;
-      background-color: #f7f7f7;
-      border-radius: 8px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-  }
-  
-  .wordsList div {
-      padding: 8px 16px;
-      margin: 5px;
-      background-color: #e0e0e0;
-      border-radius: 4px;
-      font-size: 16px;
-      text-align: center;
-  }
-  
-  .wordsList div.found::after {
-      content: ' ✔️'; /* Añade una palomita después del texto */
-      color: green; /* Color verde para la palomita */
-  }
-  
-  /* Opcionalmente, puedes ajustar el estilo de la palabra encontrada para diferenciarla aún más */
-  .wordsList div.found {
-      background-color: #90ee90; /* Verde claro para indicar que la palabra ha sido encontrada */
-      text-decoration: none; /* Remueve el line-through si prefieres no tachar la palabra */
-  }
+.selected {
+    background-color: #90ee90; /* Un verde claro para las letras seleccionadas */
+}
 
+.found {
+    background-color: white; /* Un rojo claro para las palabras encontradas */
+}
+
+.wordsList {
+    margin: 20px auto;
+    max-width: 90vw;
+    padding: 10px;
+    background-color: #f7f7f7;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.wordsList div {
+    padding: 8px 16px;
+    margin: 5px;
+    background-color: #e0e0e0;
+    border-radius: 4px;
+    font-size: 16px;
+    text-align: center;
+}
+
+.wordsList div.found::after {
+    content: ' ✔️'; /* Añade una palomita después del texto */
+    color: green; /* Color verde para la palomita */
+}
+
+/* Opcionalmente, puedes ajustar el estilo de la palabra encontrada para diferenciarla aún más */
+.wordsList div.found {
+    background-color: #90ee90; /* Verde claro para indicar que la palabra ha sido encontrada */
+    text-decoration: none; /* Remueve el line-through si prefieres no tachar la palabra */
+}
