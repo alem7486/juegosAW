@@ -29,7 +29,7 @@ body{
   }
   
   .found {
-      background-color: #ffcccb; /* Un rojo claro para las palabras encontradas */
+      background-color: white; /* Un rojo claro para las palabras encontradas */
   }
   .wordsList {
       margin: 20px auto;
