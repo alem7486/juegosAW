@@ -1,6 +1,5 @@
 body{
     background-color: gray;
-    font
   }
   
   #wordSearchContainer {
@@ -62,3 +61,11 @@ body{
       background-color: #90ee90; /* Verde claro para indicar que la palabra ha sido encontrada */
       text-decoration: none; /* Remueve el line-through si prefieres no tachar la palabra */
   }
+
+
+.nunito-uniquifier {
+  font-family: "Nunito", serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+}
