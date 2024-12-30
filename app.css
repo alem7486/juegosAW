@@ -8,8 +8,7 @@
 body {
     background-color: white;
     font-family: "Nunito", sans-serif;
-    margin: 20px;
-    padding: 20px;
+    padding: 5px;
 }
 
 h1 {
@@ -22,19 +21,18 @@ h1 {
     grid-template-columns: repeat(10, 1fr); /* Ajusta según el tamaño deseado */
     gap: 5px;
     max-width: 500px; /* Ajusta según el tamaño deseado */
-    margin: 20px auto; /* Centrado en la página */
     padding: 10px;
 }
 
 #wordSearchContainer div {
-    width: 50px; /* Ajusta según el tamaño deseado */
-    height: 50px; /* Ajusta según el tamaño deseado */
+    width: 20px; /* Ajusta según el tamaño deseado */
+    height: 20px; /* Ajusta según el tamaño deseado */
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: white;
     cursor: pointer;
-    border: 1px solid #ccc; /* Opcional: un borde para cada celda */
+    border: 1px solid black; /* Opcional: un borde para cada celda */
 }
 
 #wordSearchContainer div.selected {
@@ -58,7 +56,6 @@ h1 {
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
 }
 
 .wordsList div {
